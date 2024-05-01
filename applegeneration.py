@@ -4,7 +4,7 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.title('Wir erstellen unsere erste App')
+st.title('Wir erstellen unsere erste Apple')
 def generator_model():
     model = tf.keras.Sequential([
         tf.keras.layers.Dense(256, input_shape=(100,), activation='relu'),
