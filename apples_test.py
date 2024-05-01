@@ -1,24 +1,36 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
 
-st.title('Apple Generator')
+def generator_model():
+    model = tf.keras.Sequential([
+        tf.keras.layers.Dense(256, input_shape=(100,), activation='relu'),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.Dense(28*28*1, activation='tanh'),
+        tf.keras.layers.BatchNormalization(),
+        tf.keras.layers.Reshape((28, 28, 1))
+    ])
+    return model
 
-DATE_COLUMN = 'date/time'
-DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
-         'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+def discriminator_model():
+    model = tf.keras.Sequential([
+        tf.keras.layers.Flatten(input_shape=(28, 28, 1)),
+        tf.keras.layers.Dense(256, activation='relu'),
+        tf.keras.layers.Dense(1, activation='sigmoid')
+    ])
+    return model
 
-@st.cache_data
-def load_data(nrows):
-    data = pd.read_csv(DATA_URL, nrows=nrows)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
-    return data
-# Create a text element and let the reader know the data is loading.
-data_load_state = st.text('Loading data...')
-# Load 10,000 rows of data into the dataframe.
-data = load_data(10000)
-# Notify the reader that the data was successfully loaded.
-data_load_state.text("Test")
+generator = generator_model()
+discriminator = discriminator_model()
+
+gan_input = tf.keras.Input(shape=(100,))
+gan_output = discriminator(generator(gan_input))
+
+gan = tf.keras.Model(gan_input, gan_output)
+
+cross_entropy = tf.keras.losses.BinaryCrossentropy()
+
+generator_optimizer = tf.keras.optimizers.Adam(learning_rate=0.0002, beta_1=0.5)
+discriminator_optimizer = tf.keras.optimizers.Adam(learning_rate=0.0002, beta_1=0.5)
