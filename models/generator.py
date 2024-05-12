@@ -17,13 +17,13 @@ class Generator:
         self.model.add(tf.keras.layers.
                        Reshape((7, 7, 256))
                        )
-        self.check_shape("Dense_Layer", (None, 7, 7, 256))
+        self._check_shape("Dense_Layer", (None, 7, 7, 256))
 
         # 2nd Network
         self.model.add(tf.keras.layers.
                        Conv2DTranspose(128, (5, 5), strides=(1, 1), padding='same', use_bias=False)
                        )
-        self.check_shape("1st Convolution", (None, 7, 7, 128))
+        self._check_shape("1st Convolution", (None, 7, 7, 128))
         self.model.add(tf.keras.layers.
                        BatchNormalization()
                        )
@@ -33,7 +33,7 @@ class Generator:
         self.model.add(tf.keras.layers.
                        Conv2DTranspose(64, (5, 5), strides=(2, 2), padding='same', use_bias=False)
                        )
-        self.check_shape("2nd Convolution", (None, 14, 14, 64))
+        self._check_shape("2nd Convolution", (None, 14, 14, 64))
         self.model.add(tf.keras.layers.
                        BatchNormalization()
                        )
@@ -45,11 +45,11 @@ class Generator:
         self.model.add(tf.keras.layers.
                        Conv2DTranspose(1, (5, 5), strides=(2, 2), padding='same', use_bias=False, activation='tanh')
                        )
-        self.check_shape("3rd Convolution & Activation", (None, 28, 28, 1))
+        self._check_shape("3rd Convolution & Activation", (None, 28, 28, 1))
 
         return self.model
 
-    def check_shape(self, location, shape):
+    def _check_shape(self, location, shape):
         if self.model.output_shape != shape:
             print("Location: " + location)
             print("Expected " + shape + " but found " + self.model.output_shape)
