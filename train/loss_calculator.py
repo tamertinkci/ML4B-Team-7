@@ -39,9 +39,9 @@ def optimization():
 
 def save_checkpoint():
     checkpoint_dir = './training_checkpoints'
-    checkpoint_identifier = os.path.join(checkpoint_dir, "ckpt")
+    os.path.join(checkpoint_dir, "ckpt")
     checkpoint = tf.train.Checkpoint(generator_optimizer=optimization(),
                                      discriminator_optimizer=optimization(),
-                                     generator=gen.Generator,
-                                     discriminator=disc.Discriminator)
+                                     generator=gen.Generator().make_generator_model(),
+                                     discriminator=disc.Discriminator().make_discriminator_model())
     return checkpoint
