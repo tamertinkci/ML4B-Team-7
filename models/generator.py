@@ -6,7 +6,7 @@ class Generator:
         super().__init__()
         self.model = tf.keras.Sequential()
 
-    def make_generator_model(self):
+    def create_generator_model(self):
         # 1st Network
         self.model.add(tf.keras.layers.
                        Dense(7 * 7 * 256, use_bias=False, input_shape=(100,))
