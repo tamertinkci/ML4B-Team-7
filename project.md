@@ -4,9 +4,10 @@ Stephen Nkwelle (StudOn-Username/Enrollment Number), Yamen Mohamad (StudOn-Usern
 
 ## *1 Introduction*
 ### Motivation
-
+The ability to automatically detect and generate images of apples has numerous practical applications in agriculture and the food industry. For example, accurate apple detection can help automate sorting in fruit packing facilities, while generating realistic images can aid in enhancing training datasets for machine learning models. Additionally, deploying this functionality in an interactive Streamlit app can provide an accessible tool for users to experiment with and apply these technologies.
 
 ### Research question
+How can a Generative Adversarial Network (GAN) be utilized to detect and generate realistic images of apples, and how can this be effectively deployed in a Streamlit application?
 
 
 ### Structure of this Document
@@ -19,19 +20,21 @@ This document is structered as follows:
 6. Conclusion
 
 ## *2 Related Work*
+
 ### Existing Approaches
 What have others done in your area of work/ to answer similar questions?
+
+Research in the field of computer vision and machine learning has addressed tasks such as object detection and image generation. Some approaches have focused specifically on the fruit category.
+Studies have shown that GANs can be effectively used for generating high-quality fruit images, enhancing datasets for training, and improving detection accuracy.
 
 
 ### Relevance to our work
 Discussing existing work in the context of your work
 
+While many studies have explored GANs for fruit detection, this project specifically addresses the detection and generation of apple images using a custom GAN model. Our aim is to create a functional programm that can also be deployed as a Streamlit app, making these advanced machine learning capabiliteis accessible and practical for users.
 
 ## *3 Methodology*
 ### 3.1 General Methodology
-How did you proceed to achieve your project goals? 
-Describe which steps you have undertaken
-Aim: Others should understand your research process
 
 To achieve the project goals, we followed these steps:
 1. **Litarature Review:** Understanding existing GAN models and their applications in image detection and generation.
@@ -42,21 +45,24 @@ To achieve the project goals, we followed these steps:
 
 ### 3.2 Data Understanding and Preparation
 #### Dataset Introduction  
+The dataset consists of 850 apple images sourced from Kaggle, which allows for commercial use.
 Link for the dataset:   https://www.kaggle.com/datasets/jayaprakashpondy/apple-fruit  
-
-The dataset consists of ...
 
 #### Structure and Size
 - Size: 850 images
 - Format: jpg and jpeg
-- Labels: ?
+- Structure: Divided into train and test folders, each with four subdirectories:
+    - Blotch
+    - Normal
+    - Rot
+    - Scab
+- Image Sizes: Various dimensions
 
 #### Specialities
-- Diversity: Includes various apple types and conditions
-- Quality: ?
+- Diversity: Includes various apple types and conditions such as blotch, normal, rot, and scab
 
 #### Data Preparation
-- Augmentation: Applying transformations like scaling?
+- Augmentation: Applying transformations like scaling
 - Normalization: Scaling pixel values to the range [-1,1] to facilitate model training
 
 
@@ -103,7 +109,6 @@ Dangers of the application of your work (for example discrimination through ML m
 
 Transparency 
 
-Effects on Climate Change 
 
 
 ### Further Research
