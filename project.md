@@ -22,15 +22,11 @@ This document is structered as follows:
 ## *2 Related Work*
 
 ### Existing Approaches
-What have others done in your area of work/ to answer similar questions?
-
 Research in the field of computer vision and machine learning has addressed tasks such as object detection and image generation. Some approaches have focused specifically on the fruit category.
 Studies have shown that GANs can be effectively used for generating high-quality fruit images, enhancing datasets for training, and improving detection accuracy.
 
 
 ### Relevance to our work
-Discussing existing work in the context of your work
-
 While many studies have explored GANs for fruit detection, this project specifically addresses the detection and generation of apple images using a custom GAN model. Our aim is to create a functional programm that can also be deployed as a Streamlit app, making these advanced machine learning capabiliteis accessible and practical for users.
 
 ## *3 Methodology*
@@ -45,7 +41,7 @@ To achieve the project goals, we followed these steps:
 
 ### 3.2 Data Understanding and Preparation
 #### Dataset Introduction  
-The dataset consists of 850 apple images sourced from Kaggle, which allows for commercial use.
+The dataset consists of 850 apple images sourced from Kaggle, which allows for commercial use.  
 Link for the dataset:   https://www.kaggle.com/datasets/jayaprakashpondy/apple-fruit  
 
 #### Structure and Size
@@ -58,7 +54,7 @@ Link for the dataset:   https://www.kaggle.com/datasets/jayaprakashpondy/apple-f
     - Scab
 - Image Sizes: Various dimensions
 
-#### Specialities
+#### Speciality
 - Diversity: Includes various apple types and conditions such as blotch, normal, rot, and scab
 
 #### Data Preparation
