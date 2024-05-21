@@ -14,15 +14,15 @@ print(config['theme']['primaryColor'])
 print(config['theme']['backgroundColor'])
 
 add_selectbox = st.sidebar.selectbox(
-    "How would you like to be contacted?",
-    ("Email", "Home phone", "Mobile phone")
+    "Test",
+    ("option 1", "option 2", "option 3")
 )
 
 # Using "with" notation
 with st.sidebar:
     add_radio = st.radio(
-        "Choose a shipping method",
-        ("Standard (5-15 days)", "Express (2-5 days)")
+        "Choose your Apple",
+        ("Normal Apple", "Rotten Apple", "Scab Apple", "Blotch Apple")
     )
 st.title('AppleGenerator')
 st.image('https://i.gifer.com/7kvq.gif', width=100)  
