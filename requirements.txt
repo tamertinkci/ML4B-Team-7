@@ -2,5 +2,5 @@ streamlit
 pandas
 numpy
 tensorflow
-addmatplotlib
+matplotlib
 ipython
