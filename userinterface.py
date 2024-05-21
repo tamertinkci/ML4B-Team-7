@@ -1,5 +1,6 @@
 import streamlit as st
 import toml
+import time
 
 st.set_page_config(layout="wide")
 
@@ -51,9 +52,9 @@ with tab2:
 st.title("Apple image generator")
 st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
 if st.button("Generate :magic_wand:"):
-    st.write("Please wait...")
+   with st.spinner('Wait for it...'):
+    time.sleep(5)
 
-    
 with tab3:
    st.title("Gallery")
    
