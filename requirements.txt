@@ -4,3 +4,4 @@ numpy
 tensorflow
 matplotlib
 ipython
+toml
