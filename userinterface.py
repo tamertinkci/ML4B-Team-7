@@ -59,6 +59,7 @@ with tab2:
             st.image('https://i.gifer.com/7kvq.gif', width=30)
 
         with col2:
+            st.markdown("<style>div.row-widget.stHorizontal{margin-left:10px !important;}</style>", unsafe_allow_html=True)
             st.text('Wait for it')
 
         time.sleep(10)
