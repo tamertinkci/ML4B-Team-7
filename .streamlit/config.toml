@@ -3,5 +3,5 @@ primaryColor = "#FF6347"  #Rot
 backgroundColor = "#2C3E50"  #Dunkles Blau-Grau
 secondaryBackgroundColor = "#2980B9"  #Blau
 textColor = "#ECF0F1"  #Hellgrau
-font = "sans-serif"
+font = "sans serif"
 
