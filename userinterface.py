@@ -2,7 +2,7 @@ import streamlit as st
 import toml
 
 st.set_page_config(layout="wide")
-#st.video('recorded_screencast.mp4')
+st.video('https://www.youtube.com/watch?v=OGtjFlgGtRQ')
 
 def load_config(file_path):
     with open(file_path, 'r') as file:
