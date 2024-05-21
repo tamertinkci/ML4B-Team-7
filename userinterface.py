@@ -20,26 +20,29 @@ with st.sidebar:
         "Choose your Apple",
         ("Normal Apple", "Rotten Apple", "Scab Apple", "Blotch Apple")
     )
-tab1, tab2, tab3 = st.tabs(["Home", "Applegenerator", "Gallery"])
+tab1, tab2, tab3, tab4 = st.tabs(["Home", "Applegenerator", "Gallery"])
 
 with tab1:
    st.header("Home")
    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
 
 with tab2:
-   st.header("Appleimagegenerator")
+   st.header("Apple image generator")
    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
-
+   st.radio("Choose your Apple", ["Normal", "Rot", "Scab"], help='Select an Apple out of 3 choices')
 with tab3:
    st.header("Gallery")
    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
 st.title('AppleGenerator')
 
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.image('https://i.gifer.com/7kvq.gif', width=200)
-
-    
-st.radio("Choose your Apple", ["Normal", "Rot", "Scab"], help='Select an Apple out of 3 choices')
-
+with tab4:
+   st.header("About Us")
+   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+st.title('AppleGenerator')
 st.write("[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
+   st.image('https://i.gifer.com/7kvq.gif', width=200)
+ 
+
+
+
+
