@@ -8,7 +8,7 @@ def load_config(file_path):
         config = toml.load(file)
     return config
 
-config = load_config('.streamli/config.toml')
+config = load_config('.streamlit/config.toml')
 
 print(config['theme']['primaryColor'])
 print(config['theme']['backgroundColor'])
