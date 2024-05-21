@@ -31,13 +31,13 @@ with tab2:
     <style>
     .stButton>button {
         background-color: #4CAF50; /* Grüne Hintergrundfarbe */
-        color: white; /* Weiße Textfarbe */
-        border: none; /* Keine Rahmen */
-        padding: 15px 32px; /* Padding */
-        text-align: center; /* Text zentrieren */
+        color: black; /* Textfarbe */
+        border: none; 
+        padding: 15px 32px; 
+        text-align: center; 
         text-decoration: none; /* Keine Unterstreichung */
         display: inline-block; /* Inline-Blockelement */
-        font-size: 16px; /* Schriftgröße */
+        font-size: 20px; /* Schriftgröße */
         margin: 4px 2px; /* Rand */
         cursor: pointer; /* Cursor ändert sich bei Hover */
         border-radius: 12px; /* Abgerundete Ecken */
