@@ -23,11 +23,11 @@ with st.sidebar:
 tab1, tab2, tab3, tab4 = st.tabs(["Home", "Applegenerator", "Gallery", "About Us"])
 
 with tab1:
-   st.header("Home")
+   st.title("Home")
    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
 
 with tab2:
-   st.header("Apple image generator")
+   st.title("Apple image generator")
    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
    st.radio("Choose your Apple", ["Normal", "Rot", "Scab"], help='Select an Apple out of 3 choices')
     
