@@ -2,6 +2,6 @@
 primaryColor = "#FF6347"  #Rot
 backgroundColor = "#FFFFFF"  #Weiß
 secondaryBackgroundColor = "#2980B9"  #Blau
-textColor = "#ECF0F1"  #Hellgrau
+textColor = "#000000"  #Schwarz
 font = "sans serif"
 
