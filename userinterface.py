@@ -29,7 +29,7 @@ with tab1:
 with tab2:
    st.title("Apple image generator")
    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
-   st.radio("Choose your Apple", ["Normal", "Rot", "Scab"], help='Select an Apple out of 3 choices')
+   st.button("Generate :magic_wand:")
     
 with tab3:
    st.title("Gallery")
