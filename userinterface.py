@@ -27,9 +27,32 @@ with tab1:
    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
 
 with tab2:
-   st.title("Apple image generator")
-   st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
-   st.button("Generate :magic_wand:")
+st.markdown("""
+    <style>
+    .stButton>button {
+        background-color: #4CAF50; /* Grüne Hintergrundfarbe */
+        color: white; /* Weiße Textfarbe */
+        border: none; /* Keine Rahmen */
+        padding: 15px 32px; /* Padding */
+        text-align: center; /* Text zentrieren */
+        text-decoration: none; /* Keine Unterstreichung */
+        display: inline-block; /* Inline-Blockelement */
+        font-size: 16px; /* Schriftgröße */
+        margin: 4px 2px; /* Rand */
+        cursor: pointer; /* Cursor ändert sich bei Hover */
+        border-radius: 12px; /* Abgerundete Ecken */
+    }
+    .stButton>button:hover {
+        background-color: #45a049; /* Dunklere grüne Hintergrundfarbe bei Hover */
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title("Apple image generator")
+st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
+if st.button("Generate :magic_wand:"):
+    st.write("Please wait...")
+
     
 with tab3:
    st.title("Gallery")
