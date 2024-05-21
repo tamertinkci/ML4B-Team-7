@@ -20,7 +20,7 @@ with st.sidebar:
         "Choose your Apple",
         ("Normal Apple", "Rotten Apple", "Scab Apple", "Blotch Apple")
     )
-tab1, tab2, tab3, tab4 = st.tabs(["Home", "Applegenerator", "Gallery"])
+tab1, tab2, tab3, tab4 = st.tabs(["Home", "Applegenerator", "Gallery", "About Us"])
 
 with tab1:
    st.header("Home")
