@@ -60,7 +60,7 @@ with tab2:
 
         with col2:
             st.markdown("<style>div.row-widget.stHorizontal{margin-left:10px !important;}</style>", unsafe_allow_html=True)
-            st.text('Wait for it')
+            st.text('Wait for it...')
 
         time.sleep(10)
 
