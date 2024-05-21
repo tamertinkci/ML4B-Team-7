@@ -32,16 +32,14 @@ with tab2:
    st.radio("Choose your Apple", ["Normal", "Rot", "Scab"], help='Select an Apple out of 3 choices')
     
 with tab3:
-   st.header("Gallery")
-   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
-   st.title('AppleGenerator')
+   st.title("Gallery")
+   
 
 with tab4:
-   st.header("About Us")
-   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
-   st.title('AppleGenerator')
-   st.write("[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
+   st.title("About Us")
    st.image('https://i.gifer.com/7kvq.gif', width=200)
+   st.write("[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
+  
  
 
 
