@@ -49,8 +49,8 @@ with tab2:
     </style>
     """, unsafe_allow_html=True)
 
-    st.title("Apple image generator")
-    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
+   st.title("Apple image generator")
+   st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
     if st.button("Generate :magic_wand:"):
         with st.spinner('Wait for it...'):
             time.sleep(5)
