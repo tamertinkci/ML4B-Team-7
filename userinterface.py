@@ -11,10 +11,10 @@ def load_config(file_path):
     return config
 
 config = load_config('.streamlit/config.toml')
-add_page_title()
-show_pages_from_config()
-#print(config['theme']['primaryColor'])
-#print(config['theme']['backgroundColor'])
+#add_page_title()
+#show_pages_from_config()
+print(config['theme']['primaryColor'])
+print(config['theme']['backgroundColor'])
 
 st.title('AppleGenerator')
 st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=100)
