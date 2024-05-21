@@ -53,9 +53,15 @@ with tab2:
     st.title("Apple image generator")
     st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
     if st.button("Generate :magic_wand:"):
+    col1, col2 = st.columns([1, 3]) 
+
+    with col1:
         st.image('https://i.gifer.com/7kvq.gif', width=30)
+
+    with col2:
         st.text('Wait for it')
-        time.sleep(10)
+
+    time.sleep(10)
 
 with tab3:
     st.title("Gallery")
