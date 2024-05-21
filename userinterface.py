@@ -13,6 +13,17 @@ config = load_config('.streamlit/config.toml')
 print(config['theme']['primaryColor'])
 print(config['theme']['backgroundColor'])
 
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
+
+# Using "with" notation
+with st.sidebar:
+    add_radio = st.radio(
+        "Choose a shipping method",
+        ("Standard (5-15 days)", "Express (2-5 days)")
+    )
 st.title('AppleGenerator')
 st.image('https://i.gifer.com/7kvq.gif', width=100)  
 st.radio("Choose your Apple", ["Normal", "Rot", "Scab"], help='Select an Apple out of 3 choices')
