@@ -1,6 +1,5 @@
 import streamlit as st
 import toml
-from st_pages import show_pages_from_config, add_page_title
 
 st.set_page_config(layout="wide")
 #st.video('recorded_screencast.mp4')
@@ -11,8 +10,7 @@ def load_config(file_path):
     return config
 
 config = load_config('.streamlit/config.toml')
-#add_page_title()
-#show_pages_from_config()
+
 print(config['theme']['primaryColor'])
 print(config['theme']['backgroundColor'])
 
