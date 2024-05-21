@@ -27,7 +27,7 @@ with tab1:
    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
 
 with tab2:
-st.markdown("""
+   st.markdown("""
     <style>
     .stButton>button {
         background-color: #4CAF50; /* Grüne Hintergrundfarbe */
