@@ -21,14 +21,15 @@ with st.sidebar:
         "Choose your Apple",
         ("Normal Apple", "Rotten Apple", "Scab Apple", "Blotch Apple")
     )
+
 tab1, tab2, tab3, tab4 = st.tabs(["Home", "Ai image generator", "Gallery", "About Us"])
 
 with tab1:
-   st.title("Home")
-   st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
+    st.title("Home")
+    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
 
 with tab2:
-   st.markdown("""
+    st.markdown("""
     <style>
     .stButton>button {
         background-color: #4CAF50; /* Grüne Hintergrundfarbe */
@@ -49,22 +50,16 @@ with tab2:
     </style>
     """, unsafe_allow_html=True)
 
-   st.title("Apple image generator")
-   st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
+    st.title("Apple image generator")
+    st.image("https://oekastatic.orf.at/static/images/site/oeka/20170936/apfel.5650847.jpg", width=200)
     if st.button("Generate :magic_wand:"):
         with st.spinner('Wait for it...'):
             time.sleep(5)
+
 with tab3:
-   st.title("Gallery")
-   
+    st.title("Gallery")
 
 with tab4:
-   st.title("About Us")
-   st.image('https://i.gifer.com/7kvq.gif', width=200)
-   st.write("[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
-  
- 
-
-
-
-
+    st.title("About Us")
+    st.image('https://i.gifer.com/7kvq.gif', width=200)
+    st.write("[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
