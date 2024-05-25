@@ -1,21 +1,24 @@
-"name" Project
+# Apple Detection and Generation
 
-Stephen Nkwelle (StudOn-Username/Enrollment Number), Yamen Mohamad (StudOn-Username/Enrollment Number), Sabrin Souilah (StudOn-Username/Enrollment Number), Tamer Tinkci (ir38oreq)
+Stephen Nkwelle (StudOn-Username/Enrollment Number), Yamen Mohamad (StudOn-Username/Enrollment Number), Sabrin Souilah (ag63uhiz/23174787), Tamer Tinkci (ir38oreq)
 
-# *1 Introduction*
-Motivation
+## *1 Introduction*
+### Motivation
 
-Define your research question
+### Research question
 
-How is this document structured
+### Structure of this Document
 
-# *2 Related Work*
+## *2 Related Work*
+### Existing Approaches
 What have others done in your area of work/ to answer similar questions?
 
+### Relevance to our work
 Discussing existing work in the context of your work
 
-# *3 Methodology*
+## *3 Methodology*
 _3.1 General Methodology_
+
 How did you proceed to achieve your project goals? 
 
 Describe which steps you have undertaken
@@ -23,6 +26,7 @@ Describe which steps you have undertaken
 Aim: Others should understand your research process
 
 _3.2 Data Understanding and Preparation_
+
 Introduce the dataset to the reader
 
 Describe structure and size of your dataset
@@ -32,6 +36,7 @@ Describe specialities
 Describe how you prepare the dataset for your project
 
 _3.3 Modeling and Evaluation_
+
 Describe the model architecture(s) you selected
 
 Describe how you train your models
