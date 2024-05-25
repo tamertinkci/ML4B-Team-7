@@ -55,7 +55,7 @@ Link for the dataset:   https://www.kaggle.com/datasets/jayaprakashpondy/apple-f
 - Image Sizes: Various dimensions
 
 #### Speciality
-- Diversity: Includes various apple types and conditions such as blotch, normal, rot, and scab
+- Diversity: Includes various apple types and conditions as mentioned above.
 
 #### Data Preparation
 - Augmentation: Applying transformations like scaling
@@ -102,9 +102,6 @@ Show the limitations : e.g. missing data, limited training ressources/ GPU avail
 Discuss your work from an ethics perspective:
 
 Dangers of the application of your work (for example discrimination through ML models)
-
-Transparency 
-
 
 
 ### Further Research
