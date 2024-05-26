@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import toml
 import time
+from generate_image import generate_and_plot
 
 st.set_page_config(layout="wide")
 
@@ -43,8 +44,11 @@ if selected2 == 'Ai Image Generator':
 
     st.title("Generate your own Apple")
     if st.button("Generate :magic_wand:"):
-        with st.spinner('Wait for it...'):
-            time.sleep(5)
+        # with st.spinner('Wait for it...'):
+            # time.sleep(2)
+        image = generate_and_plot()
+        st.image(image, caption="An Apple")
+
 
 if selected2 == 'Gallery':
     st.title('Gallery')
