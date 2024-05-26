@@ -1,6 +1,6 @@
 # Apple Detection and Generation
 
-Stephen Nkwelle (qi74ximu/22712737), Yamen Mohamad (StudOn-Username/Enrollment Number), Sabrin Souilah (ag63uhiz/23174787), Tamer Tinkci (ir38oreq/22942217)
+Stephen Nkwelle (qi74ximu/22712737), Yamen Mohamad (ge20xogu/22810361), Sabrin Souilah (ag63uhiz/23174787), Tamer Tinkci (ir38oreq/22942217)
 
 ## *1 Introduction*
 ### Motivation
