@@ -1,7 +1,7 @@
-streamlit
-pandas
-numpy
-tensorflow
-matplotlib
-ipython
+streamlit~=1.32.0
+pandas~=2.2.1
+numpy~=1.23.5
+tensorflow~=2.12.0
+ipython~=8.20.0
+matplotlib~=3.8.4
 toml
