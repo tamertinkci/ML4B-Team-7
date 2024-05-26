@@ -1,0 +1,17 @@
+.stButton>button {
+    background-color: #660000;
+    color: white; /* Textfarbe */
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none; /* Keine Unterstreichung */
+    display: inline-block; /* Inline-Blockelement */
+    font-size: 30px; /* Schriftgröße */
+    margin: 4px 2px; /* Rand */
+    cursor: pointer; /* Cursor ändert sich bei Hover */
+    border-radius: 12px; /* Abgerundete Ecken */
+}
+.stButton>button:hover {
+    background-color: #440000;
+    color: white;
+}
