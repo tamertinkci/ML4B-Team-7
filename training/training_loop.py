@@ -137,7 +137,7 @@ def _generate_and_save_images(model, noise, epoch):
         plt.imshow(generated_images[index, :, :, 0] * 127.5 + 127.5, cmap='viridis')
         plt.axis('off')
 
-    plt.savefig('image_at_epoch_{:03d}.png'.format(epoch))
+    plt.savefig('./data/train_generated/image_at_epoch_{:03d}.png'.format(epoch))
     plt.show()
 
 
@@ -155,6 +155,6 @@ def _save_checkpoint(generator, discriminator, gen_optimizer, disc_optimizer):
 def _print_info(epoch, start_time, gen_loss, disc_loss):
     elapsed_time = time.time() - start_time
 
-    print(f'Epoch: {epoch}, Time: {elapsed_time}ms, '
+    print(f'Epoch: {epoch}, Time: {elapsed_time}s, '
           f'Gen Loss: {gen_loss}, Disc Loss: {disc_loss}')
 

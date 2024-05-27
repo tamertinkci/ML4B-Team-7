@@ -1,4 +1,5 @@
 import models.model_definition as models
+import tensorflow as tf
 
 
 class GAN:
@@ -17,11 +18,14 @@ class GAN:
         return self.discriminator
 
     def generate_image(self, noise):
-        image = self.generator(noise, training=False)
+        gen_model = tf.keras.models.load_model(filepath='./models/generator.h5')
+
+        image = gen_model(noise, training=False)
         return image
 
     def make_image_prediction(self, image):
         prediction = self.discriminator(image, training=False)
+
         return prediction
 
     def generate_image_with_prediction(self, noise):
