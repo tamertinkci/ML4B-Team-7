@@ -41,4 +41,11 @@ def _plot_image(image):
 
 
 if __name__ == "__main__":
-    generate_and_plot()
+    img = generate_and_plot()
+    img.show()
+
+    img_2 = _generate_image()
+
+    pred = gan.make_image_prediction(img_2)
+
+    print(f'Prediction: {pred}')
