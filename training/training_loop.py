@@ -138,7 +138,7 @@ def _generate_and_save_images(model, noise, epoch):
         plt.axis('off')
 
     plt.savefig('./data/train_generated/image_at_epoch_{:03d}.png'.format(epoch))
-    plt.show()
+    # plt.show()
 
 
 def _save_checkpoint(generator, discriminator, gen_optimizer, disc_optimizer):

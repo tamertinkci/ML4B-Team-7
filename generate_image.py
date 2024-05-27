@@ -4,6 +4,8 @@ from models.gan import gan
 import tensorflow as tf
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 
+""" API for UI 
+"""
 
 noise = tf.random.normal([32, 100])
 
