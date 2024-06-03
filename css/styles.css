@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+.bruno-ace-unique {
+  font-family: 'Bruno Ace', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .stButton>button {
     background-color: #660000;
     color: white; /* Textfarbe */
@@ -11,7 +19,7 @@
     cursor: pointer; /* Cursor ändert sich bei Hover */
     border-radius: 12px; /* Abgerundete Ecken */
 }
+
 .stButton>button:hover {
     background-color: #440000;
-    color: white;
 }

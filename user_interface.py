@@ -6,6 +6,11 @@ from generate_image import generate_and_plot
 
 st.set_page_config(layout="wide")
 
+with open("css/styles.css") as f:
+    css = f.read()
+
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+
 
 def load_config(file_path):
     with open(file_path, 'r') as file:
@@ -16,14 +21,18 @@ def load_config(file_path):
 config = load_config('.streamlit/config.toml')
 
 with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Settings'],
-                           icons=['house', 'gear'], menu_icon="cast", default_index=1)
+
+    selected = option_menu("Main Menu", ["Home", 'Settings', 'About Us'],
+                           icons=['house', 'gear', 'exclamation-circle'], menu_icon="cast", default_index=1)
 
 if selected == 'Home':
-    st.title("The Applegenerator")
+    st.markdown('<h1 class="bruno-ace-unique">The Applegenerator</h1>', unsafe_allow_html=True)
 
-    selected2 = option_menu(None, ["Home", "Ai Image Generator", "Gallery", 'About Us'],
-                            icons=['house', 'alexa', "border-all", 'exclamation-circle'],
+    selected2 = option_menu(None, ["Home", "Ai Image Generator", "Gallery"],
+                            icons=['house', 'alexa', "border-all"],
+
+    selected = option_menu("Main Menu", ["Home", 'Settings'],
+                           icons=['house', 'gear'], menu_icon="cast", default_index=1)
                             menu_icon="cast", default_index=0, orientation="horizontal")
 
     if selected2 == 'Home':
@@ -54,20 +63,57 @@ if selected == 'Home':
         st.title('Gallery')
         st.write("In this gallery, you'll find generated Apple images from the community.")
 
-    if selected2 == 'About Us':
-        st.title("About Us")
-        st.image('https://i.gifer.com/7kvq.gif', width=200)
-        st.write(
-            "[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
 
 if selected == 'Settings':
     st.title('Settings')
-    selected3 = option_menu(None, ["Theme", "Generator", "Gallery", 'About Us'],
+    selected3 = option_menu(None, ["Theme"],
                             menu_icon="cast", default_index=0, orientation="horizontal")
 
     if selected3 == "Theme":
-        theme_choice = st.radio("Choose Theme", ["Darkmode", "Lightmode"])
-        if theme_choice == "Lightmode":
-            st.write('Lightmode')
-        elif theme_choice == "Darkmode":
-            st.write('Darkmode')
+        ms = st.session_state
+        if "themes" not in ms:
+            ms.themes = {"current_theme": "light",
+                         "refreshed": True,
+
+                         "light": {"theme.base": "dark",
+                                   "theme.backgroundColor": "#000000",  # Weiß
+                                   "theme.primaryColor": "#660000",  # Dunkelrot
+                                   "theme.secondaryBackgroundColor": "#2F2F2F",  # Dunkelgrau
+                                   "theme.textColor": "#FFFFFF",  # Schwarz
+                                   "button_face": "Darkmode🌜"},
+
+                         "dark": {"theme.base": "light",
+                                  "theme.backgroundColor": "white",
+                                  "theme.primaryColor": "#5591f5",
+                                  "theme.secondaryBackgroundColor": "#82E1D7",
+                                  "theme.textColor": "#0a1464",
+                                  "button_face": "Lightmode🌞"},
+                         }
+
+
+        def ChangeTheme():
+            previous_theme = ms.themes["current_theme"]
+            tdict = ms.themes["light"] if ms.themes["current_theme"] == "light" else ms.themes["dark"]
+            for vkey, vval in tdict.items():
+                if vkey.startswith("theme"): st._config.set_option(vkey, vval)
+
+            ms.themes["refreshed"] = False
+            if previous_theme == "dark":
+                ms.themes["current_theme"] = "light"
+            elif previous_theme == "light":
+                ms.themes["current_theme"] = "dark"
+
+
+        btn_face = ms.themes["light"]["button_face"] if ms.themes["current_theme"] == "light" else ms.themes["dark"][
+            "button_face"]
+        st.button(btn_face, on_click=ChangeTheme)
+
+        if ms.themes["refreshed"] == False:
+            ms.themes["refreshed"] = True
+            st.rerun()
+
+if selected == 'About Us':
+    st.title("About Us")
+    st.image('https://i.gifer.com/7kvq.gif', width=200)
+    st.write(
+         "[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
