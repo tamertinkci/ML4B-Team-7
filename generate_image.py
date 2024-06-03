@@ -1,14 +1,20 @@
 import matplotlib.pyplot as plt
-
+from PIL import Image
 from models.gan import gan
 import tensorflow as tf
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+
+""" API for UI 
+"""
 
 noise = tf.random.normal([32, 100])
 
 
 def generate_and_plot():
     image = _generate_image()
-    _plot_image(image)
+    return_image = _plot_image(image)
+
+    return return_image
 
 
 def download_image():
@@ -22,13 +28,26 @@ def _generate_image():
 
 
 def _plot_image(image):
-    plt.figure(figsize=(4, 4))
-    plt.subplot(1, 1, 1)
-    plt.imshow(image[0, :, :, 0] * 127.5 + 127.5, cmap='viridis')
-    plt.axis('off')
+    fig, ax = plt.subplots(1, 1)
+    im = ax.imshow(image[0, :, :, 0] * 127.5 + 127.5, cmap='viridis')
+    canvas = FigureCanvasAgg(fig)
+    canvas.draw()
 
-    plt.show()
+    renderer = canvas.get_renderer()
+
+    image_set = im.make_image(renderer)
+
+    image_pil = Image.fromarray(image_set[0])
+
+    return image_pil
 
 
 if __name__ == "__main__":
-    generate_and_plot()
+    img = generate_and_plot()
+    img.show()
+
+    img_2 = _generate_image()
+
+    pred = gan.make_image_prediction(img_2)
+
+    print(f'Prediction: {pred}')

@@ -137,8 +137,8 @@ def _generate_and_save_images(model, noise, epoch):
         plt.imshow(generated_images[index, :, :, 0] * 127.5 + 127.5, cmap='viridis')
         plt.axis('off')
 
-    plt.savefig('image_at_epoch_{:03d}.png'.format(epoch))
-    plt.show()
+    plt.savefig('./data/train_generated/image_at_epoch_{:03d}.png'.format(epoch))
+    # plt.show()
 
 
 def _save_checkpoint(generator, discriminator, gen_optimizer, disc_optimizer):
@@ -153,25 +153,8 @@ def _save_checkpoint(generator, discriminator, gen_optimizer, disc_optimizer):
 
 
 def _print_info(epoch, start_time, gen_loss, disc_loss):
-    original_time = time.time() - start_time
-    record = []
-    time_in_secs = original_time
+    elapsed_time = time.time() - start_time
 
-    while time_in_secs >= 60:
-        z = time_in_secs % 60
-        record.append(z)
-        time_in_secs = time_in_secs / 60
+    print(f'Epoch: {epoch}, Time: {elapsed_time}s, '
+          f'Gen Loss: {gen_loss}, Disc Loss: {disc_loss}')
 
-        if len(record) > 3:
-            break
-
-    if len(record) > 0:
-        if len(record) == 3:
-            print(f'Epoch: {epoch}, Time: {record[2]}:{record[1]}:{record[0]}, '
-                  f'Gen Loss: {gen_loss}, Disc Loss: {disc_loss}')
-        elif len(record) == 2:
-            print(f'Epoch: {epoch}, Time: {record[2]}:{record[1]}:{record[0]}, '
-                  f'Gen Loss: {gen_loss}, Disc Loss: {disc_loss}')
-    else:
-        print(f'Epoch: {epoch}, Time: {original_time}, '
-              f'Gen Loss: {gen_loss}, Disc Loss: {disc_loss}')

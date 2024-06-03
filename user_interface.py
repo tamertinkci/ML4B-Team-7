@@ -21,6 +21,7 @@ def load_config(file_path):
 config = load_config('.streamlit/config.toml')
 
 with st.sidebar:
+
     selected = option_menu("Main Menu", ["Home", 'Settings', 'About Us'],
                            icons=['house', 'gear', 'exclamation-circle'], menu_icon="cast", default_index=1)
 
@@ -29,6 +30,9 @@ if selected == 'Home':
 
     selected2 = option_menu(None, ["Home", "Ai Image Generator", "Gallery"],
                             icons=['house', 'alexa', "border-all"],
+
+    selected = option_menu("Main Menu", ["Home", 'Settings'],
+                           icons=['house', 'gear'], menu_icon="cast", default_index=1)
                             menu_icon="cast", default_index=0, orientation="horizontal")
 
     if selected2 == 'Home':
