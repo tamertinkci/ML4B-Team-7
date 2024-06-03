@@ -18,7 +18,7 @@ def load_config(file_path):
     return config
 
 
-config = load_config('.Streamlit/Config.toml')
+config = load_config('.Streamlit/config.toml')
 
 with st.sidebar:
     selected = option_menu("Main Menu", ["Home", 'Settings', 'About Us'],
