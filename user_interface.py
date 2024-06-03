@@ -18,7 +18,7 @@ def load_config(file_path):
     return config
 
 
-config = load_config('.streamlit/config.toml')
+config = load_config('.Streamlit/Config.toml')
 
 with st.sidebar:
 
