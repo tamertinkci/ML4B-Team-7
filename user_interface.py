@@ -61,9 +61,9 @@ if selected == 'Settings':
     selected3 = option_menu(None, ["Theme"],
                             menu_icon="cast", default_index=0, orientation="horizontal")
 
-  /*  if selected3 == "Theme":
+   if selected3 == "Theme":
         ms = st.session_state
-        if "themes" not in ms:
+      """  if "themes" not in ms:
             ms.themes = {"current_theme": "dark",
                          "refreshed": True,
                          "light": {"theme.base": "dark",
@@ -98,7 +98,57 @@ if selected == 'Settings':
 
         if not ms.themes["refreshed"]:
             ms.themes["refreshed"] = True
-            st.experimental_rerun() */
+            st.experimental_rerun() """
+
+
+        import streamlit as st
+
+# Define session state for theme management (if not already defined)
+if "themes" not in st.session_state:
+    st.session_state.themes = {
+        "current_theme": "light",
+        "refreshed": True,
+        "light": {
+            "theme.base": "dark",
+            "theme.backgroundColor": "white",
+            "theme.primaryColor": "#5591f5",
+            "theme.secondaryBackgroundColor": "#82E1D7",
+            "theme.textColor": "#0a1464",
+            "button_face": "Darkmode",  # Button text for light mode
+        },
+        "dark": {
+            "theme.base": "dark",
+            "theme.backgroundColor": "#000000",
+            "theme.primaryColor": "#660000",
+            "theme.secondaryBackgroundColor": "#2F2F2F",
+            "theme.textColor": "#FFFFFF",
+            "button_face": "Lightmode",  # Button text for dark mode
+        },
+    }
+
+# Function to apply theme based on current selection
+def apply_theme(theme_name):
+    st.session_state.themes["current_theme"] = theme_name
+    for key, value in st.session_state.themes[theme_name].items():
+        st.set_page_config(page_title=None, page_icon=None, layout="centered", **{key: value})
+
+# Check if "Theme" is selected and apply corresponding theme
+if selected3 == "Theme":
+    if st.button(st.session_state.themes[st.session_state.themes["current_theme"]]["button_face"]):
+        # Switch between themes on button click
+        if st.session_state.themes["current_theme"] == "light":
+            apply_theme("dark")
+        else:
+            apply_theme("light")
+
+# Apply the current theme on page load
+apply_theme(st.session_state.themes["current_theme"])
+
+
+
+
+
+
 
 
 if selected == 'About Us':
