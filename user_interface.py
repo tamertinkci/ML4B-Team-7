@@ -101,7 +101,7 @@ if selected == 'Settings':
             st.experimental_rerun() """
 
 
-        import streamlit as st
+       
 
 # Define session state for theme management (if not already defined)
 if "themes" not in st.session_state:
