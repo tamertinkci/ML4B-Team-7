@@ -72,7 +72,7 @@ if selected == 'Settings':
                                    "theme.secondaryBackgroundColor": "#82E1D7",
                                    "theme.textColor": "#0a1464",
                                    "button_face": "Darkmode🌜"
-                                   "button_color": "#82E1D7",
+                                  
                                   },
                          "dark": {"theme.base": "dark",
                                   "theme.backgroundColor": "#000000",
@@ -80,7 +80,7 @@ if selected == 'Settings':
                                   "theme.secondaryBackgroundColor": "#2F2F2F",
                                   "theme.textColor": "#FFFFFF",
                                   "button_face": "Lightmode🌞",
-                                  "button_color": "#82E1D7",
+                                
                                  },
                          }
 
