@@ -61,7 +61,7 @@ if selected == 'Settings':
     selected3 = option_menu(None, ["Theme"],
                             menu_icon="cast", default_index=0, orientation="horizontal")
 
-   if selected3 == "Theme":
+    if selected3 == "Theme":
         ms = st.session_state
         if "themes" not in ms:
             ms.themes = {"current_theme": "dark",
