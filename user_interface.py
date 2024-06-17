@@ -79,7 +79,9 @@ if selected == 'Settings':
                                   "theme.primaryColor": "#660000",
                                   "theme.secondaryBackgroundColor": "#2F2F2F",
                                   "theme.textColor": "#FFFFFF",
-                                  "button_face": "Lightmode🌞"},
+                                  "button_face": "Lightmode🌞",
+                                  "button_color": "#82E1D7",
+                                 },
                          }
 
         def ChangeTheme():
