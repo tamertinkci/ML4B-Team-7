@@ -47,8 +47,8 @@ if selected == 'Home':
     if selected2 == 'Ai Image Generator':
         st.title("Generate your own Apple")
         if st.button("Generate :magic_wand:"):
-            with st.spinner('Wait for it Habibi...'):
-            time.sleep(2)
+            # with st.spinner('Wait for it...'):
+            # time.sleep(2) 
             image = generate_and_plot()
             st.image(image, caption="An Apple")
 
