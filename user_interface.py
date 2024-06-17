@@ -71,7 +71,9 @@ if selected == 'Settings':
                                    "theme.primaryColor": "#5591f5",
                                    "theme.secondaryBackgroundColor": "#82E1D7",
                                    "theme.textColor": "#0a1464",
-                                   "button_face": "Darkmode🌜"},
+                                   "button_face": "Darkmode🌜"
+                                   "button_color": "#82E1D7",
+                                  },
                          "dark": {"theme.base": "dark",
                                   "theme.backgroundColor": "#000000",
                                   "theme.primaryColor": "#660000",
