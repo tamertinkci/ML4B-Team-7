@@ -100,4 +100,4 @@ if selected == 'About Us':
     st.title("About Us")
     st.image('https://i.gifer.com/7kvq.gif', width=200)
     st.write(
-         "[![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
+         "[our GitHub! ![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
