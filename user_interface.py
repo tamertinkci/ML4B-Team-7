@@ -66,7 +66,7 @@ if selected == 'Settings':
         if "themes" not in ms:
             ms.themes = {"current_theme": "dark",
                          "refreshed": True,
-                         "light": {"theme.base": "dark",
+                         "light": {"theme.base": "light",
                                    "theme.backgroundColor": "white",
                                    "theme.primaryColor": "#5591f5",
                                    "theme.secondaryBackgroundColor": "#82E1D7",
