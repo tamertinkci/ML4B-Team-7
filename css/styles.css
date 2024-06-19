@@ -27,17 +27,13 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
-.bruno-ace-unique {
-  font-family: 'Bruno Ace', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
+
 
 :root {
     --button-bg-color: #660000;
     --button-text-color: white;
     --button-hover-bg-color: #440000;
+  
 }
 
 .dark-mode {
@@ -58,6 +54,12 @@
     margin: 4px 2px; /* Margin */
     cursor: pointer; /* Cursor changes on hover */
     border-radius: 12px; /* Rounded corners */
+  .bruno-ace-unique {
+  font-family: 'Bruno Ace', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 }
 
 .stButton>button:hover {
