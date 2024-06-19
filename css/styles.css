@@ -4,26 +4,26 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-}
+} */
 
-.stButton>button {
+/*.stButton>button {
     background-color: #660000;
-    color: white; /* Textfarbe */
+    color: white; 
     border: none;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none; /* Keine Unterstreichung */
-    display: inline-block; /* Inline-Blockelement */
-    font-size: 30px; /* Schriftgröße */
-    margin: 4px 2px; /* Rand */
-    cursor: pointer; /* Cursor ändert sich bei Hover */
-    border-radius: 12px; /* Abgerundete Ecken */
+    text-decoration: none; /* Keine Unterstreichung 
+    display: inline-block; /* Inline-Blockelement *
+    font-size: 30px; /* Schriftgröße *
+    margin: 4px 2px; /* Rand *
+    cursor: pointer; /* Cursor ändert sich bei Hover *
+    border-radius: 12px; /* Abgerundete Ecken *
 }
 
 .stButton>button:hover {
     background-color: #440000;
 }
-*/
+*/ 
 
 
 
@@ -43,14 +43,59 @@
 
 .stButton>button {
     background-color: var(--button-bg-color);
-    color: var(--button-text-color); /* Text color */
+    color: var(--button-text-color); /* Text color *
   @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
   .bruno-ace-unique {
     font-family: 'Bruno Ace', sans-serif;
     font-optical-sizing: auto;
     font-weight: 5000;
     font-style: normal;
-    border: 10px solid var(--button-border-color); /* Border color */
+    border: 10px solid var(--button-border-color); /* Border color *
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none; /* No underline *
+    display: inline-block; /* Inline block element *
+    font-size: 30px; /* Font size *
+    margin: 4px 2px; /* Margin *
+    cursor: pointer; /* Cursor changes on hover *
+    border-radius: 12px; /* Rounded corners *
+}
+
+.stButton>button:hover {
+    background-color: var(--button-hover-bg-color);
+    border-color: var(--button-border-color); /* Ensure border color is consistent on hover 
+}
+
+*/
+
+
+
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+:root {
+    --button-bg-color: #660000;
+    --button-text-color: white;
+    --button-hover-bg-color: #440000;
+    --button-border-color: #880000;
+}
+
+.dark-mode {
+    --button-bg-color: #5591f5;
+    --button-text-color: #0a1464;
+    --button-hover-bg-color: #3a78c3;
+    --button-border-color: #2f78c3;
+}
+
+.stButton>button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color); /* Text color */
+    border: 2px solid var(--button-border-color); /* Border color */
     padding: 15px 32px;
     text-align: center;
     text-decoration: none; /* No underline */
@@ -65,3 +110,11 @@
     background-color: var(--button-hover-bg-color);
     border-color: var(--button-border-color); /* Ensure border color is consistent on hover */
 }
+
+.bruno-ace-unique {
+    font-family: 'Bruno Ace', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
