@@ -79,14 +79,14 @@
 
 
 :root {
-    --button-bg-color: #660000;
+    --button-bg-color: white;
     --button-text-color: white;
     --button-hover-bg-color: #440000;
     --button-border-color: #880000;
 }
 
 .dark-mode {
-    --button-bg-color: #660000;
+    --button-bg-color: white;
     --button-text-color: #0a1464;
     --button-hover-bg-color: #3a78c3;
     --button-border-color: #2f78c3;
