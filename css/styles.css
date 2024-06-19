@@ -26,18 +26,12 @@
 */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
-.bruno-ace-unique {
-  /*font-family: 'Bruno Ace', sans-serif;*/
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
 
 :root {
     --button-bg-color: #660000;
     --button-text-color: white;
     --button-hover-bg-color: #440000;
+    --button-border-color: #880000;
   
 }
 
@@ -45,6 +39,7 @@
     --button-bg-color: #5591f5;
     --button-text-color: #0a1464;
     --button-hover-bg-color: #3a78c3;
+    --button-border-color: #2f78c3;
 }
 
 .stButton>button {
