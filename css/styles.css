@@ -44,9 +44,8 @@
 .stButton>button {
     background-color: var(--button-bg-color);
     color: var(--button-text-color); /* Text color */
-    font-family: 'Bruno Ace', sans-serif;
     font-optical-sizing: auto;
-    font-weight: 5000;
+    font-weight: 1500;
     font-style: normal;
     border: 10px solid var(--button-border-color); /* Border color */
     padding: 15px 32px;
