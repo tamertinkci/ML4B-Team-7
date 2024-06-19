@@ -9,6 +9,12 @@
 .stButton>button {
     background-color: #660000;
     color: white; /* Textfarbe */
+  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+  .bruno-ace-unique {
+    font-family: 'Bruno Ace', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     border: none;
     padding: 15px 32px;
     text-align: center;
