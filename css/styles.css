@@ -32,7 +32,6 @@
     --button-text-color: white;
     --button-hover-bg-color: #440000;
     --button-border-color: #880000;
-  
 }
 
 .dark-mode {
@@ -45,7 +44,7 @@
 .stButton>button {
     background-color: var(--button-bg-color);
     color: var(--button-text-color); /* Text color */
-    border: none;
+    border: 2px solid var(--button-border-color); /* Border color */
     padding: 15px 32px;
     text-align: center;
     text-decoration: none; /* No underline */
@@ -54,9 +53,9 @@
     margin: 4px 2px; /* Margin */
     cursor: pointer; /* Cursor changes on hover */
     border-radius: 12px; /* Rounded corners */
-  
 }
 
 .stButton>button:hover {
     background-color: var(--button-hover-bg-color);
+    border-color: var(--button-border-color); /* Ensure border color is consistent on hover */
 }
