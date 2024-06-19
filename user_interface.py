@@ -157,6 +157,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide")
 
+# Load the CSS file
 with open("css/styles.css") as f:
     css = f.read()
 
@@ -169,6 +170,7 @@ def load_config(file_path):
 
 config = load_config('.Streamlit/config.toml')
 
+# Sidebar menu
 with st.sidebar:
     selected = option_menu("Main Menu", ["Home", 'Settings', 'About Us'],
                            icons=['house', 'gear', 'exclamation-circle'], menu_icon="cast", default_index=0)
@@ -239,11 +241,14 @@ if selected == 'Settings':
             ms.themes["refreshed"] = False
 
         btn_face = ms.themes["dark"]["button_face"] if ms.themes["current_theme"] == "light" else ms.themes["light"]["button_face"]
-        st.button(btn_face, on_click=ChangeTheme)
+        if st.button(btn_face, on_click=ChangeTheme):
+            if ms.themes["current_theme"] == "dark":
+                components.html(f"<script>document.body.classList.add('dark-mode');</script>", height=0)
+            else:
+                components.html(f"<script>document.body.classList.remove('dark-mode');</script>", height=0)
 
         if not ms.themes["refreshed"]:
             ms.themes["refreshed"] = True
-            components.html(f"<script>document.body.classList.toggle('dark-mode');</script>")
             st.experimental_rerun()
 
 if selected == 'About Us':
@@ -251,4 +256,3 @@ if selected == 'About Us':
     st.image('https://i.gifer.com/7kvq.gif', width=200)
     st.write(
          "Our GitHub [![Star](https://img.shields.io/github/stars/tamertinkci/ML4B-Team-7.svg?logo=github&style=social)](https://gitHub.com/tamertinkci/ML4B-Team-7)")
-
