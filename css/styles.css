@@ -76,7 +76,7 @@
 
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
 
 :root {
     --button-bg-color: #660000;
@@ -109,12 +109,5 @@
 .stButton>button:hover {
     background-color: var(--button-hover-bg-color);
     border-color: var(--button-border-color); /* Ensure border color is consistent on hover */
-}
-
-.bruno-ace-unique {
-    font-family: 'Bruno Ace', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
 }
 
