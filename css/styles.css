@@ -44,8 +44,6 @@
 .stButton>button {
     background-color: var(--button-bg-color);
     color: var(--button-text-color); /* Text color */
-  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
-  .bruno-ace-unique {
     font-family: 'Bruno Ace', sans-serif;
     font-optical-sizing: auto;
     font-weight: 5000;
