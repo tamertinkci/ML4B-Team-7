@@ -28,14 +28,14 @@
 
 
 :root {
-    --button-bg-color: Black;
+    --button-bg-color: #660000;
     --button-text-color: white;
     --button-hover-bg-color: #440000;
     --button-border-color: #880000;
 }
 
 .dark-mode {
-    --button-bg-color: white;
+    --button-bg-color: #5591f5;
     --button-text-color: #0a1464;
     --button-hover-bg-color: #3a78c3;
     --button-border-color: #2f78c3;
@@ -44,16 +44,13 @@
 .stButton>button {
     background-color: var(--button-bg-color);
     color: var(--button-text-color); /* Text color */
-    font-optical-sizing: auto;
-    font-weight: 1500;
-    font-style: normal;
-    border: 10px solid var(--button-border-color); /* Border color */
+    border: 2px solid var(--button-border-color); /* Border color */
     padding: 15px 32px;
     text-align: center;
     text-decoration: none; /* No underline */
     display: inline-block; /* Inline block element */
     font-size: 30px; /* Font size */
-    margin: 4px 2px; /* Margin *7
+    margin: 4px 2px; /* Margin */
     cursor: pointer; /* Cursor changes on hover */
     border-radius: 12px; /* Rounded corners */
 }
@@ -62,11 +59,6 @@
     background-color: var(--button-hover-bg-color);
     border-color: var(--button-border-color); /* Ensure border color is consistent on hover */
 }
-
-
-
-
-
 
 
 
