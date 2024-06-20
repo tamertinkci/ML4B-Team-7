@@ -33,6 +33,7 @@ def evaluate_gen_model(model, dataset, noise):
 
     for image in dataset:
         generated_images = model(noise, training=False)
+
         ssim_scores = tf.image.ssim(image[0], generated_images[0], max_val=2.0)
         mean_ssim = tf.reduce_mean(ssim_scores)
 

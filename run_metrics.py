@@ -64,8 +64,6 @@ def gan_testing(directory):
     gen_model = tf.keras.models.load_model(filepath='./artefacts/generator.h5')
     disc_model = tf.keras.models.load_model(filepath='./artefacts/discriminator.h5')
 
-    generated_images = gen_model(noise, training=False)
-
     print('Testing models...')
 
     tester.evaluate_disc_model(disc_model, dataset)
