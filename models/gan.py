@@ -18,7 +18,7 @@ class GAN:
         return self.discriminator
 
     def generate_image(self, noise):
-        gen_model = tf.keras.models.load_model(filepath='./models/generator.h5')
+        gen_model = tf.keras.models.load_model(filepath='../artefacts/generator.h5')
 
         image = gen_model(noise, training=False)
         return image

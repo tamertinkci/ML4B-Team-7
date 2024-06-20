@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 from PIL import Image
 from models.gan import gan
 import tensorflow as tf
@@ -17,10 +18,6 @@ def generate_and_plot():
     return return_image
 
 
-def download_image():
-    pass
-
-
 def _generate_image():
     image = gan.generate_image(noise)
 
@@ -28,8 +25,10 @@ def _generate_image():
 
 
 def _plot_image(image):
+    # batch_size, height, width, channels = image.shape
+
     fig, ax = plt.subplots(1, 1)
-    im = ax.imshow(image[0, :, :, 0] * 127.5 + 127.5, cmap='viridis')
+    im = ax.imshow(image[0, :, :, 0] * 127.5 + 127.5)
     canvas = FigureCanvasAgg(fig)
     canvas.draw()
 
