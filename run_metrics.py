@@ -1,18 +1,32 @@
 from models.gan import gan
 import training.training_loop as trainer
-# import testing.testing as tester
+import training.testing as tester
 import tensorflow as tf
 
-BUFFER_SIZE = 541  # Size of the training dataset
-BATCH_SIZE = 32
+'''
+All variables with ** could be changed to see how it affects performance
+'''
+
+BUFFER_SIZE = 3791  # Size of the training dataset **
+BATCH_SIZE = 32     # **
 NOISE_DIM = 100
-EPOCHS = 3000
+EPOCHS = 2          # **
 
 noise = tf.random.normal([BATCH_SIZE, NOISE_DIM])
 
+'''
+Possible reasons for ...
+1. Model too small (x)
+2. Data set not big enough (possibly)
+3. Learn rate too big (?)
+
+TODOs
+1. Check loss function (plot it) (maybe not necessary)
+'''
+
 
 def gan_training(directory):
-    dataset = trainer.load_data(directory, BATCH_SIZE, BUFFER_SIZE)
+    train_dataset, val_dataset = trainer.load_data(directory, BATCH_SIZE, BUFFER_SIZE)
 
     print("Staring training... ")
 
@@ -22,38 +36,52 @@ def gan_training(directory):
     discriminator.compile(optimizer='adam', loss='binary_crossentropy')
     generator.compile(optimizer='adam', loss='binary_crossentropy')
 
-    # with tf.device("/gpu:0"):
-    trainer.train(
-        generator,
-        discriminator,
-        dataset,
-        noise,
-        EPOCHS
-    )
+    with tf.device("/gpu:0"):
+        trainer.train(
+            generator,
+            discriminator,
+            train_dataset,
+            val_dataset,
+            noise,
+            EPOCHS
+        )
 
-    print("Ending training...")
-    print('')
+    print("Ending training...\n")
     print('Saving Models... ')
 
-    generator.save(filepath='./models/generator.h5')
-    discriminator.save(filepath='./models/discriminator.h5')
+    generator.save(filepath='./artefacts/generator.h5')
+    discriminator.save(filepath='./artefacts/discriminator.h5')
 
-    print('models saved!')
+    print('models saved!\n')
+    # End of function
 
-"""
+
 def gan_testing(directory):
+    print('Starting testing...')
+    print('Loading dataset and models...')
+
     dataset = trainer.load_data(directory, BATCH_SIZE, BUFFER_SIZE, purpose='testing')
-    pass
-"""
+    gen_model = tf.keras.models.load_model(filepath='./artefacts/generator.h5')
+    disc_model = tf.keras.models.load_model(filepath='./artefacts/discriminator.h5')
+
+    generated_images = gen_model(noise, training=False)
+
+    print('Testing models...')
+
+    tester.evaluate_disc_model(disc_model, dataset)
+    tester.evaluate_gen_model(gen_model, dataset, noise)
+
+    print('Testing Done!')
+    # End of function
+
 
 if __name__ == "__main__":
     train_directory = './data/Train'
-    # test_directory = './data/Test'
+    test_directory = './data/Test'
 
     # result = gan.generate_image_with_prediction(noise)
     # print(f'{result[1]}')
 
     gan_training(train_directory)
-    # gan_testing(test_directory)
-
-    # print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+    gan_testing(test_directory)
+    # End of function

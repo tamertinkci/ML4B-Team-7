@@ -21,3 +21,9 @@ def optimization():
     optimizer = tf.keras.optimizers.Adam(1e-4)
 
     return optimizer
+
+
+def loss_metric():
+    loss = tf.keras.metrics.Mean()
+
+    return loss
