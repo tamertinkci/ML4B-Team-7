@@ -27,7 +27,7 @@ with st.sidebar:
 # Initialisiere st.session_state.themes, wenn es noch nicht existiert
 if 'themes' not in st.session_state:
     st.session_state.themes = {
-        "current_theme": "light",
+        "current_theme": "dark",
         "refreshed": True,
         "light": {
             "theme.base": "light",
