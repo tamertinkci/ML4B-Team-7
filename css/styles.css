@@ -29,7 +29,7 @@
 
 :root {
     --button-bg-color:none;
-    --button-text-color: #880000;
+    --button-text-color: gray;
     --button-hover-bg-color: #440000;
     --button-border-color: #880000;
 }
