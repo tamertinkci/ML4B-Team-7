@@ -28,7 +28,7 @@
 
 
 :root {
-    --button-bg-color:#5591f5 ;
+    --button-bg-color:gray ;
     --button-text-color: white;
     --button-hover-bg-color: #440000;
     --button-border-color: #880000;
