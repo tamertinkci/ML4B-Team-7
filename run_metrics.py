@@ -8,9 +8,9 @@ All variables with ** could be changed to see how it affects performance
 '''
 
 BUFFER_SIZE = 3791  # Size of the training dataset **
-BATCH_SIZE = 32     # **
+BATCH_SIZE = 64     # **
 NOISE_DIM = 100
-EPOCHS = 2          # **
+EPOCHS = 100          # **
 
 noise = tf.random.normal([BATCH_SIZE, NOISE_DIM])
 
@@ -20,8 +20,13 @@ Possible reasons for ...
 2. Data set not big enough (possibly)
 3. Learn rate too big (?)
 
-TODOs
+General TODOs
 1. Check loss function (plot it) (maybe not necessary)
+
+Next-In-Line TODOs
+1. Reduce decrease in learn rate
+2. Reduce or increase learn rate to see effect on pictures
+3. Increase batch size
 '''
 
 

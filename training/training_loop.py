@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 
 import os.path
 import time
-import random
 
 from IPython import display
 
@@ -85,8 +84,12 @@ def train(generator, discriminator, train_dataset, val_dataset, noise, epochs):
     disc_optimizer = loss_calc.optimization()
     gen_loss_metric = loss_calc.loss_metric()
     disc_loss_metric = loss_calc.loss_metric()
+
     gen_loss = 0
     disc_loss = 0
+    val_gen_loss = 0
+    val_disc_loss = 0
+    previous_val_gen_loss = float('inf')
 
     for epoch in range(epochs):
         start_time = time.time()
@@ -97,11 +100,11 @@ def train(generator, discriminator, train_dataset, val_dataset, noise, epochs):
                                               gen_optimizer, disc_optimizer, image_batch, noise)
 
         # Validation
-        for images in val_dataset:
-            _validation_step(generator, discriminator, gen_loss_metric,
-                             disc_loss_metric, images, noise)
+        for images, labels in val_dataset:
+            val_gen_loss, val_disc_loss = _validation_step(generator, discriminator,
+                                                           gen_loss_metric,disc_loss_metric, images, noise)
 
-        # Print image // Not necessary // Just for fun!!!
+        # Print image to visualize progress // Not necessary // Just for fun!!!
         display.clear_output(wait=True)
         _generate_and_save_images(
             generator,
@@ -109,12 +112,18 @@ def train(generator, discriminator, train_dataset, val_dataset, noise, epochs):
             epoch + 1
         )
 
+        # Adjust learn rate if necessary
+        # if epoch > 10:
+        if epoch % 10 == 0:
+            _adjust_learn_rate(val_gen_loss, previous_val_gen_loss, gen_optimizer)
+            previous_val_gen_loss = val_gen_loss
+
         # Save checkpoint
         if epoch % 20 == 0 and epoch != 0:
             _save_checkpoint(generator, discriminator, gen_optimizer, disc_optimizer)
 
         # Print progress
-        _print_info(epoch + 1, start_time, gen_loss, disc_loss)
+        _print_info(epoch + 1, start_time, gen_loss, disc_loss, val_gen_loss, val_disc_loss)
 
     # Generate after the final epoch
     display.clear_output(wait=True)
@@ -142,10 +151,10 @@ def _train_step(gen_model, disc_model, gen_optimizer, disc_optimizer, images, no
     return gen_loss, disc_loss
 
 
-# @tf.function    # Improves efficiency
+@tf.function    # Improves efficiency
 def _validation_step(gen_model, disc_model, gen_loss_metric, disc_loss_metric, images, noise):
     generated_images = gen_model(noise, training=False)
-    real_output = disc_model(images[0], training=False)
+    real_output = disc_model(images, training=False)
     fake_output = disc_model(generated_images, training=False)
 
     disc_loss = loss_calc.discriminator_loss(real_output, fake_output)
@@ -153,8 +162,8 @@ def _validation_step(gen_model, disc_model, gen_loss_metric, disc_loss_metric, i
 
     gen_loss_metric.update_state(gen_loss)
     disc_loss_metric.update_state(disc_loss)
-    # return gen_loss, disc_loss
-    # End of function
+
+    return gen_loss, disc_loss
 
 
 def _generate_and_save_images(model, noise, epoch):
@@ -184,9 +193,18 @@ def _save_checkpoint(generator, discriminator, gen_optimizer, disc_optimizer):
     # End of function
 
 
-def _print_info(epoch, start_time, gen_loss, disc_loss):
+def _adjust_learn_rate(val_gen_loss, previous_val_gen_loss, gen_optimizer):
+    if val_gen_loss > previous_val_gen_loss:
+        new_learning_rate = gen_optimizer.learning_rate * 0.98
+        gen_optimizer.learning_rate.assign(new_learning_rate)
+        print(f"Reduced generator learning rate to {new_learning_rate.numpy():.6f}")
+    # End of function
+
+
+def _print_info(epoch, start_time, gen_loss, disc_loss, val_gen, val_disc):
     elapsed_time = time.time() - start_time
 
     print(f'Epoch: {epoch}, Time: {elapsed_time}s, '
-          f'Gen Loss: {gen_loss}, Disc Loss: {disc_loss}')
+          f'Gen Loss: {gen_loss}, Disc Loss: {disc_loss}, '
+          f'Val Gen Loss: {val_gen}, Val Disc Loss: {val_disc}')
     # End of function
