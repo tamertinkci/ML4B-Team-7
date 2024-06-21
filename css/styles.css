@@ -35,7 +35,7 @@
 }
 
 .dark-mode {
-    --button-bg-color: #5591f5;
+    --button-bg-color: black;
     --button-text-color: #0a1464;
     --button-hover-bg-color: #3a78c3;  /**/
     --button-border-color: #2f78c3;
