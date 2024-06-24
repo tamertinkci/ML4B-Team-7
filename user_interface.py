@@ -64,7 +64,7 @@ if selected == 'Home':
     with col3:
         st.write("")
 
-    st.title('Create your own apple with only 1 Click!')
+    st.title('Create your own apple with just 1 Click!')
 
     ms = st.session_state
     if "themes" not in ms:
