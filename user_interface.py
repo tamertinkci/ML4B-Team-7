@@ -66,7 +66,6 @@ if selected == 'Home':
 
     st.title('Create your own apple with only 1 Click!')
 
-
     ms = st.session_state
     if "themes" not in ms:
         ms.themes = {
@@ -113,7 +112,6 @@ if selected == 'Home':
         st.write("")
     with col3:
         st.button(btn_face, on_click=ChangeTheme)
-        st.write("")
 
     st.markdown('<hr>', unsafe_allow_html=True)
     st.markdown("""
