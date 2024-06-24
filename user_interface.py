@@ -136,4 +136,4 @@ if selected == 'Ai Image Generator':
 
 if selected == 'History':
     st.title('History of Generated Apples')
-    st.write("Here you will find your recent created images of apples")
+    st.write("Here you will find your recently created images of apples")
