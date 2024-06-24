@@ -17,6 +17,28 @@ def load_config(file_path):
 
 config = load_config('.Streamlit/config.toml')
 
+if 'themes' not in st.session_state:
+        st.session_state.themes = {
+            "current_theme": "light",
+            "refreshed": True,
+            "light": {
+                "theme.base": "light",
+                "theme.backgroundColor": "white",
+                "theme.primaryColor": "#5591f5",
+                "theme.secondaryBackgroundColor": "#82E1D7",
+                "theme.textColor": "#0a1464",
+                "button_face": "Darkmode🌜"
+            },
+            "dark": {
+                "theme.base": "dark",
+                "theme.backgroundColor": "#000000",
+                "theme.primaryColor": "#660000",
+                "theme.secondaryBackgroundColor": "#2F2F2F",
+                "theme.textColor": "#FFFFFF",
+                "button_face": "Lightmode🌞"
+            }
+        }
+    
 st.markdown('<h1 class="bruno-ace-unique">The Applegenerator</h1>', unsafe_allow_html=True)
 
 selected = option_menu(None, ["Home", "Ai Image Generator", "History"],
@@ -44,27 +66,6 @@ if selected == 'Home':
 
     st.title('Create your own apple with only 1 Click!')
 
-    if 'themes' not in st.session_state:
-        st.session_state.themes = {
-            "current_theme": "light",
-            "refreshed": True,
-            "light": {
-                "theme.base": "light",
-                "theme.backgroundColor": "white",
-                "theme.primaryColor": "#5591f5",
-                "theme.secondaryBackgroundColor": "#82E1D7",
-                "theme.textColor": "#0a1464",
-                "button_face": "Darkmode🌜"
-            },
-            "dark": {
-                "theme.base": "dark",
-                "theme.backgroundColor": "#000000",
-                "theme.primaryColor": "#660000",
-                "theme.secondaryBackgroundColor": "#2F2F2F",
-                "theme.textColor": "#FFFFFF",
-                "button_face": "Lightmode🌞"
-            }
-        }
 
     ms = st.session_state
     if "themes" not in ms:
