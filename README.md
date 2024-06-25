@@ -1,8 +1,6 @@
 ML4B-Team-7
 # 🍎🍏The Applegenerator🍏🍎
 
-28.06.2024 Präsentation
-
 Welcome to [The Applegenerator](https://ml4b-team-7-applegenerator.streamlit.app/)!  
 This app allows you to generate apple images using GAN and view them in a gallery.  
 
