@@ -196,7 +196,7 @@ if selected == 'Home':
         st.rerun()
 
 if selected == 'Ai Image Generator':
-    st.title("Click on this button to start your creation now!")
+    st.title("Click this button to start your creation now!")
     if st.button("Generate :magic_wand:"):
         # with st.spinner('Loading...'):
         # time.sleep(2)
