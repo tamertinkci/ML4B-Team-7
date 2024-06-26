@@ -78,7 +78,23 @@ if selected == 'Home':
     By adopting this technology, we can boost efficiency, profitability, and sustainability, ultimately benefiting farmers, consumers, and the environment.
     ''')
     st.title('Want to try it yourself?')
-    st.write('Start your journey and switch to the Ai image Generator')
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.write('')
+        current_theme = st.session_state.themes["current_theme"]
+    if current_theme == "light":
+        image_url2 = 'https://i.gifer.com/3va2.gif'
+    else:
+        image_url2 = 'https://github.com/tamertinkci/ML4B-Team-7/blob/9efb84bb4cdcf29c1bd1bd17b669b8e825784cbe/assets/homepageimagelight.gif'
+
+    assert isinstance(image_url, str), f"Expected image_url to be a string, but got {type(image_url)}"
+    with col2:
+        st.write("")
+    with col3:
+        st.write('Start your journey and switch to the Ai image Generator')
+
+    
 
     ms = st.session_state
     if "themes" not in ms:
@@ -118,14 +134,15 @@ if selected == 'Home':
             ms.themes["current_theme"] = "dark"
 
     btn_face = ms.themes["light"]["button_face"] if ms.themes["current_theme"] == "light" else ms.themes["dark"]["button_face"]
+    
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.write("")
+        st.button(btn_face, on_click=ChangeTheme)
     with col2:
         st.write("")
     with col3:
-        st.button(btn_face, on_click=ChangeTheme)
+        st.write("")
 
     st.markdown('<hr>', unsafe_allow_html=True)
     st.markdown("""
