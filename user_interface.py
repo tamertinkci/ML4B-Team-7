@@ -85,7 +85,7 @@ if selected == 'Home':
         if current_theme == "light":
             image_url2 = 'https://i.gifer.com/3va2.gif'
         else:
-            image_url2 = 'https://github.com/tamertinkci/ML4B-Team-7/blob/9efb84bb4cdcf29c1bd1bd17b669b8e825784cbe/assets/homepageimagelight.gif'
+            image_url2 = 'https://raw.github.com/tamertinkci/ML4B-Team-7/9efb84bb4cdcf29c1bd1bd17b669b8e825784cbe/assets/homepageimagelight.gif'
 
         assert isinstance(image_url2, str), f"Expected image_url to be a string, but got {type(image_url2)}"
         st.image(image_url2, use_column_width=True)
