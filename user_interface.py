@@ -96,10 +96,8 @@ if selected == 'Home':
         st.write("")
         st.write("")
         st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.title('**Start your journey and switch to the Ai image Generator**')  
+        st.markdown('<h2>Start your journey and switch to the Ai image Generator</h2>', unsafe_allow_html=True)
+ 
     with col3:
         st.write("")
 
