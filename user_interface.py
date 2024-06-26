@@ -74,7 +74,7 @@ if selected == 'Home':
     By adopting this technology, we can boost efficiency, profitability, and sustainability, ultimately benefiting farmers, consumers, and the environment.
     ''')
     st.title('Want to try it yourself?')
-    st.('Start your journey and switch to the Ai image Generator')
+    st.write('Start your journey and switch to the Ai image Generator')
 
     ms = st.session_state
     if "themes" not in ms:
