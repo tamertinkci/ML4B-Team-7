@@ -168,6 +168,7 @@ if selected == 'Ai Image Generator':
         # time.sleep(2)
         image = generate_and_plot()
         st.image(image, caption="An Apple")
+        st.download_button(image, caption="Download")
 
 if selected == 'History':
     st.title('History of Generated Apples')
