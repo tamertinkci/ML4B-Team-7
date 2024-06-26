@@ -18,27 +18,27 @@ def load_config(file_path):
 config = load_config('.Streamlit/config.toml')
 
 if 'themes' not in st.session_state:
-        st.session_state.themes = {
-            "current_theme": "light",
-            "refreshed": True,
-            "light": {
-                "theme.base": "light",
-                "theme.backgroundColor": "white",
-                "theme.primaryColor": "#5591f5",
-                "theme.secondaryBackgroundColor": "#82E1D7",
-                "theme.textColor": "#0a1464",
-                "button_face": "Darkmode🌜"
-            },
-            "dark": {
-                "theme.base": "dark",
-                "theme.backgroundColor": "#000000",
-                "theme.primaryColor": "#660000",
-                "theme.secondaryBackgroundColor": "#2F2F2F",
-                "theme.textColor": "#FFFFFF",
-                "button_face": "Lightmode🌞"
-            }
+    st.session_state.themes = {
+        "current_theme": "light",
+        "refreshed": True,
+        "light": {
+            "theme.base": "light",
+            "theme.backgroundColor": "white",
+            "theme.primaryColor": "#5591f5",
+            "theme.secondaryBackgroundColor": "#82E1D7",
+            "theme.textColor": "#0a1464",
+            "button_face": "Darkmode🌜"
+        },
+        "dark": {
+            "theme.base": "dark",
+            "theme.backgroundColor": "#000000",
+            "theme.primaryColor": "#660000",
+            "theme.secondaryBackgroundColor": "#2F2F2F",
+            "theme.textColor": "#FFFFFF",
+            "button_face": "Lightmode🌞"
         }
-    
+    }
+
 st.markdown('<h1 class="bruno-ace-unique">The Applegenerator</h1>', unsafe_allow_html=True)
 
 selected = option_menu(None, ["Home", "Ai Image Generator", "History"],
@@ -82,19 +82,17 @@ if selected == 'Home':
 
     with col1:
         current_theme = st.session_state.themes["current_theme"]
-    if current_theme == "light":
-        image_url2 = 'https://i.gifer.com/3va2.gif'
-    else:
-        image_url2 = 'https://github.com/tamertinkci/ML4B-Team-7/blob/9efb84bb4cdcf29c1bd1bd17b669b8e825784cbe/assets/homepageimagelight.gif'
+        if current_theme == "light":
+            image_url2 = 'https://i.gifer.com/3va2.gif'
+        else:
+            image_url2 = 'https://github.com/tamertinkci/ML4B-Team-7/blob/9efb84bb4cdcf29c1bd1bd17b669b8e825784cbe/assets/homepageimagelight.gif'
 
-    assert isinstance(image_url2, str), f"Expected image_url to be a string, but got {type(image_url2)}"
-     st.image(image_url2, use_column_width=True)
+        assert isinstance(image_url2, str), f"Expected image_url to be a string, but got {type(image_url2)}"
+        st.image(image_url2, use_column_width=True)
     with col2:
-     st.write('Start your journey and switch to the Ai image Generator')  
+        st.write('Start your journey and switch to the Ai image Generator')  
     with col3:
-     st.write("")
-
-    
+        st.write("")
 
     ms = st.session_state
     if "themes" not in ms:
@@ -119,7 +117,6 @@ if selected == 'Home':
             },
         }
 
-
     def ChangeTheme():
         previous_theme = ms.themes["current_theme"]
         tdict = ms.themes["light"] if ms.themes["current_theme"] == "light" else ms.themes["dark"]
@@ -134,7 +131,7 @@ if selected == 'Home':
             ms.themes["current_theme"] = "dark"
 
     btn_face = ms.themes["light"]["button_face"] if ms.themes["current_theme"] == "light" else ms.themes["dark"]["button_face"]
-    
+
     col1, col2, col3 = st.columns(3)
 
     with col1:
