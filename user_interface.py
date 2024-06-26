@@ -168,7 +168,7 @@ if selected == 'Ai Image Generator':
         # time.sleep(2)
         image = generate_and_plot()
         st.image(image, caption="An Apple")
-        st.download_button("https://ml4b-team-7-applegenerator.streamlit.app", caption="Download Image")
+        #st.download_button("https://ml4b-team-7-applegenerator.streamlit.app", caption="Download Image")
 
 if selected == 'History':
     st.title('History of Generated Apples')
