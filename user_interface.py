@@ -107,7 +107,7 @@ if selected == 'Home':
             image_url2 = 'https://raw.github.com/tamertinkci/ML4B-Team-7/c8df0db3f7e8e27f9879360dbd216c9276ceea41/assets/GANlight.webp'
 
         assert isinstance(image_url2, str), f"Expected image_url2 to be a string, but got {type(image_url2)}"
-        st.image(image_url2, width=500, use_column_width=False)
+        st.image(image_url2, width=500, use_column_width=True)
 
     st.write('')
     st.write('')
