@@ -83,9 +83,9 @@ if selected == 'Home':
     with col1:
         current_theme = st.session_state.themes["current_theme"]
         if current_theme == "light":
-            image_url2 = 'https://i.gifer.com/3va2.gif'
+            image_url2 = 'https://raw.github.com/tamertinkci/ML4B-Team-7/70637eb749311fdc8d378b1d80008b567ede495f/assets/darkimage.gif'
         else:
-            image_url2 = 'https://raw.github.com/tamertinkci/ML4B-Team-7/9efb84bb4cdcf29c1bd1bd17b669b8e825784cbe/assets/homepageimagelight.gif'
+            image_url2 = 'https://raw.github.com/tamertinkci/ML4B-Team-7/70637eb749311fdc8d378b1d80008b567ede495f/assets/lightimage.gif'
 
         assert isinstance(image_url2, str), f"Expected image_url to be a string, but got {type(image_url2)}"
         st.image(image_url2, width=350, use_column_width=False)
