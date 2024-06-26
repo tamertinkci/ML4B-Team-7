@@ -67,9 +67,13 @@ if selected == 'Home':
     st.title('The Importance of Generating Images of Apples')
     st.write('''
     generating images of apples is a critical practice that enhances:
+    
     • precision in agriculture 
+    
     • improves quality control in the food industry
+    
     • and supports research and development efforts
+
     
     By adopting this technology, we can boost efficiency, profitability, and sustainability, ultimately benefiting farmers, consumers, and the environment.
     ''')
