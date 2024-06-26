@@ -88,7 +88,7 @@ if selected == 'Home':
             image_url2 = 'https://raw.github.com/tamertinkci/ML4B-Team-7/70637eb749311fdc8d378b1d80008b567ede495f/assets/lightimage.gif'
 
         assert isinstance(image_url2, str), f"Expected image_url to be a string, but got {type(image_url2)}"
-        st.image(image_url2, width=350, use_column_width=False)
+        st.image(image_url2, width=300, use_column_width=False)
     with col2:
         st.write("")
         st.write("")
@@ -98,7 +98,8 @@ if selected == 'Home':
         st.write("")
         st.write("")
         st.write("")
-        st.write('Start your journey and switch to the Ai image Generator')  
+        st.write("")
+        st.write('**Start your journey and switch to the Ai image Generator**')  
     with col3:
         st.write("")
 
