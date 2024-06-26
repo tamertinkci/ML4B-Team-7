@@ -99,7 +99,7 @@ if selected == 'Home':
         st.write("")
         st.write("")
         st.write("")
-        st.write('**Start your journey and switch to the Ai image Generator**')  
+        st.title('**Start your journey and switch to the Ai image Generator**')  
     with col3:
         st.write("")
 
