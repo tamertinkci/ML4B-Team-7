@@ -90,8 +90,13 @@ if selected == 'Home':
         assert isinstance(image_url2, str), f"Expected image_url to be a string, but got {type(image_url2)}"
         st.image(image_url2, width=350, use_column_width=False)
     with col2:
-        st.write("")
-        st.write('Start your journey and switch to the Ai image Generator')  
+       
+        st.write('''
+        
+        
+        
+        
+        Start your journey and switch to the Ai image Generator''')  
     with col3:
         st.write("")
 
