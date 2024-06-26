@@ -64,8 +64,17 @@ if selected == 'Home':
     with col3:
         st.write("")
 
-    st.title('The Importance of Generating Images of Apples for Agriculture and the Food Industry')
-    st.write('generating images of apples is a critical practice that enhances precision in agriculture, improves quality control in the food industry, and supports research and development efforts. By adopting this technology, we can boost efficiency, profitability, and sustainability, ultimately benefiting farmers, consumers, and the environment')
+    st.title('The Importance of Generating Images of Apples')
+    st.write('''
+    generating images of apples is a critical practice that enhances:
+    • precision in agriculture 
+    • improves quality control in the food industry
+    • and supports research and development efforts
+    
+    By adopting this technology, we can boost efficiency, profitability, and sustainability, ultimately benefiting farmers, consumers, and the environment.
+    ''')
+    st.title('Want to try it yourself?')
+    st.('Start your journey and switch to the Ai image Generator')
 
     ms = st.session_state
     if "themes" not in ms:
@@ -128,9 +137,9 @@ if selected == 'Home':
         st.rerun()
 
 if selected == 'Ai Image Generator':
-    st.title("Generate your own Apple")
+    st.title("Click on this button to start your creation now!")
     if st.button("Generate :magic_wand:"):
-        # with st.spinner('Wait for it...'):
+        # with st.spinner('Loading...'):
         # time.sleep(2)
         image = generate_and_plot()
         st.image(image, caption="An Apple")
