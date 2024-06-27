@@ -1,5 +1,4 @@
 # The Applegenerator 
-Apple Detection and Generation
 
 Stephen Nkwelle (qi74ximu/22712737), Yamen Mohamad (ge20xogu/22810361), Sabrin Souilah (ag63uhiz/23174787), Tamer Tinkci (ir38oreq/22942217)
 
@@ -12,7 +11,7 @@ The ability to automatically detect and generate images of apples has numerous p
 [^2]: Gordon, R. (2023, November 20). [Synthetic imagery sets new bar in AI training efficiency. MIT News | Massachusetts Institute of Technology.](https://news.mit.edu/2023/synthetic-imagery-sets-new-bar-ai-training-efficiency-1120)
 
 ### Research question
-How can a Generative Adversarial Network (GAN) be utilized to detect and generate realistic images of apples, and how can this be effectively deployed in a Streamlit application?
+How can a Generative Adversarial Network (GAN) be utilized generate realistic images of apples, and how can this be effectively deployed in a Streamlit application?
 
 
 ### Structure of this Document
@@ -44,7 +43,7 @@ As highlighted in the research by Pieters and Wiering, "Generative adversarial n
 
 
 ### Relevance to our work
-While many studies have explored GANs for fruit detection, this project specifically addresses the detection and generation of apple images using a custom GAN model. Our aim is to create a functional programm that can also be deployed as a Streamlit app, making these advanced machine learning capabiliteis accessible and practical for users.
+While many studies have explored GANs for fruit detection, this project specifically addresses the generation of apple images using a custom GAN model. Our aim is to create a functional programm that can also be deployed as a Streamlit app, making these advanced machine learning capabilities accessible and practical for users.
 
 ## *3 Methodology*
 ### 3.1 General Methodology
