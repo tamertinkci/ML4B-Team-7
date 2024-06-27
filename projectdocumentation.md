@@ -146,10 +146,8 @@ Subjective evaluation of the generated images' realism by human observers
 The Streamlit app enables users to generate an apple and view their generated images in the History section during the session. Additionally, users have the option to switch the app between dark mode and light mode under Settings.
 
 ### Achieved Results
-Descriptive Language (no judgement, no discussion in this section -> just show what you built)
-
 By applying the trained GAN model on the dataset, we achieved the following results:
-- Successfully generated realistic apple images.
+- Successfully generated apple images.
 - The discriminator effectively distinguished between real and fake images.
 - The Streamlit app provided an intuitive interface for generating and viewing apple images.
 
@@ -189,5 +187,5 @@ Implement batch processing capabilities in the app to allow users to upload mult
     Connect the app to Internet of Things (IoT) devices in agricultural settings to monitor and manage apple crops more effectively. Sensors can collect data on apple growth and quality, feeding this information into the app for real-time analysis.
 
 ## *6 Conclusion*
-In this project, we successfully developed a GAN model to generate realistic apple images. The model was integrated into a Streamlit app, providing an accessible tool for generating apple images. 
-Future work can expand on this foundation to include more fruit types and enhance the app's funcionality through real-time detection for example. But also through transfer learning and IoT integration.
+In this project, we successfully developed a GAN model to generate apple images. However, we unfortunately could not make them look realistic due to a shortage of time and technical performance. The model was integrated into a Streamlit app, providing an accessible tool for generating apple images. 
+Future work can expand on this foundation to include more fruit types and enhance the app's functionality through real-time detection, for example. But also through transfer learning and IoT integration.
